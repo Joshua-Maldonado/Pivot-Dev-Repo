@@ -29,13 +29,6 @@ function Extension() {
         </s-text>
       );
   }
-  else {
-    return (
-      <s-text>
-          Ships in 3-5 business days
-        </s-text>
-    )
-  }
   
   return null;
 }
