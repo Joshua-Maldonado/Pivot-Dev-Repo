@@ -1,7 +1,6 @@
 import '@shopify/ui-extensions/preact';
 import {render} from "preact";
-import { useEffect, useState } from "preact/hooks";
-import {useAppMetafields,useApi,useCartLineTarget} from "@shopify/ui-extensions/checkout/preact"
+import {useAppMetafields,useCartLineTarget} from "@shopify/ui-extensions/checkout/preact"
 
 
 export default function() {
@@ -10,8 +9,8 @@ export default function() {
 
 function Extension() {
   // Get the product ID from the cart line item
- 
-  const {merchandise: {product: {id: productId}}} = shopify.lines.value[0];
+  const target = useCartLineTarget();
+  const {merchandise: {product: {id: productId}}} = target;
   
  
 
